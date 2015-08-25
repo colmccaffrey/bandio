@@ -1,0 +1,9 @@
+<h1>List of all Venues</h1>
+<% @venues.each do |venue| %>
+	<ul>
+		<li><%=venue.name%></li>
+		<li><%=venue.city%></li>
+		<li><%=venue.state%></li>
+		<li>Family-friendly? <%=venue.family_friendly%></li>
+	</ul>
+	<%end%>
