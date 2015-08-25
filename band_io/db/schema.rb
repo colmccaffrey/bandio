@@ -19,25 +19,38 @@ ActiveRecord::Schema.define(version: 20150825183723) do
   create_table "bands", force: :cascade do |t|
     t.string   "name"
     t.string   "genre"
-    t.boolean  "explicit_lyrics"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "explicit_lyrics", default: false
+    t.integer  "event_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
+
+  add_index "bands", ["event_id"], name: "index_bands_on_event_id", using: :btree
 
   create_table "events", force: :cascade do |t|
     t.string   "date"
-    t.boolean  "alcohol_served"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.boolean  "alcohol_served", default: true
+    t.integer  "band_id"
+    t.integer  "venue_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
+
+  add_index "events", ["band_id"], name: "index_events_on_band_id", using: :btree
+  add_index "events", ["venue_id"], name: "index_events_on_venue_id", using: :btree
 
   create_table "venues", force: :cascade do |t|
     t.string   "name"
     t.string   "city"
     t.string   "state"
-    t.boolean  "family_friendly"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "family_friendly", default: false
+    t.integer  "band_id"
+    t.integer  "event_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
+
+  add_index "venues", ["band_id"], name: "index_venues_on_band_id", using: :btree
+  add_index "venues", ["event_id"], name: "index_venues_on_event_id", using: :btree
 
 end
