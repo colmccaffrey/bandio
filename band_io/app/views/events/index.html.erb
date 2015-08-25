@@ -1,4 +1,6 @@
+<h1>List of Events</h1>
 <% @events.each do |event| %>
+<%= link_to "Home", root_path %>
 <h2><%= event.id%></h2>
 <p><%= event.date %></p>
 <p><%= event.venue_id %></p>
