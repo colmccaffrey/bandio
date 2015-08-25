@@ -1,0 +1,7 @@
+<html>
+	<h1>Shows on <%=@events[0].date%></h1>
+		<%@events.each do |event|%>
+			<h3>Band: <%=event.band.name%></h3>
+			<h3>Venue: <%=event.venue.name%></h3>
+		<%end%>
+</html>

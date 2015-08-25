@@ -2,3 +2,9 @@
 <%=link_to "List of Venues", venues_path%>
 <%=link_to "Create New Venue", new_venue_path%>
 <%= link_to "Add Band", new_band_path%>
+
+<form action="/calendar" method="get">
+	<label for="date">Search for All Events On...</label>
+	<input type="date" name="date">
+	<button>Search</button>
+</form>
