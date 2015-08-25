@@ -1,1 +1,8 @@
 <h2>Add new Band</h2>
+<%=form_for @band do |b| %>
+	<%=b.text_field :name, placeholder: 'Name' %></br>
+	<%=b.text_field :genre, placeholder: 'Genre' %></br>
+	<%= b.label "Explicit lyrics?" %>
+	<%=b.check_box :explicit_lyrics, {}, "true", "false" %>
+	<%=b.submit%>
+	<% end %>
