@@ -11,5 +11,10 @@
 # Venue.create({name: "Union Pool", city: "New York", state: "NY", family_friendly: false})
 # Band.create({name: "Foo Fighters", genre: "rock", explicit_lyrics: false})
 # Band.create({name: "Laura Noah Band", genre: "jazz", explicit_lyrics: false})
+<<<<<<< HEAD
 Event.create({date: "10/10/15", band_id: 1, venue_id: 3})
 Event.create({date: "11/11/15", band_id: 2, venue_id: 2})
+=======
+Event.create({date: "2025-10-10", band_id: 1, venue_id: 3})
+Event.create({date: "2015-11-11", band_id: 2, venue_id: 2})
+>>>>>>> 6ee5f0109b07ba7605dd0f779bf89a58b838f7a4
