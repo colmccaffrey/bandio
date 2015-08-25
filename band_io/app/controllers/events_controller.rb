@@ -4,10 +4,19 @@ class EventsController < ApplicationController
 			@events = Event.all
 		end
 
-		private
+			def new
+		@event = Event.new
+	
+	end
 
-		def event_params
-			params.require(:event).permit(:date, :alcohol_served, :band_id, :venue_id)
-			
-		end
+	def create
+		Event.create(event_params)
+		redirect_to events_path
+	end
+
+def event_params
+		params.require(:event).permit(:date, :venue_id, :band_id)
+		
+	end
+	
 	end
