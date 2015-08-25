@@ -1,1 +1,9 @@
 <h2>List of all Bands</h2>
+<%= link_to "Home", root_path %>
+<% @bands.each do |band| %>
+	<ul>
+		<li>Name: <%= band.name%></li>
+		<li>Genre: <%=band.genre%></li>
+		<li>Explicit lyrics? <%=band.explicit_lyrics%></li>
+	</ul>
+<% end %>
