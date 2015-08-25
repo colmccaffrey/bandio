@@ -1,0 +1,9 @@
+<h2>Create new Venue</h2>
+<%= form_for @venue do |f| %>
+	<%=f.text_field :name, :required => true, placeholder: 'Name' %></br>
+	<%=f.text_field :city, :required => true, placeholder: 'City' %></br>
+	<%=f.text_field :state, :required => true, placeholder: 'State' %></br>
+	<%=f.label "Family Friendly?"%>
+	<%=f.check_box :family_friendly, {}, "true", "false" %>
+	<%=f.submit%>
+	<%end%>
